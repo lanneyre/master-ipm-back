@@ -13,9 +13,13 @@ if (isset($_GET['score'])) {
 <?php
 }
 
-echo '<form method="post" action="checkCQM.php" class="container qcm" id="QCM">';
-
-foreach ($questions as $key => $question) {
+echo '<form method="post" action="checkCQM.php" class="container qcm" id="QCM">'; ?>
+<div class="row">
+    <div class="12u">
+        <input type="text" name="nom" id="nom" placeholder="Votre nom *" class="formTest" required>
+    </div>
+</div>
+<?php foreach ($questions as $key => $question) {
 ?>
     <div class="row question <?php echo ($key == 0) ? "activeq" : ""; ?>">
         <div class="3u">
