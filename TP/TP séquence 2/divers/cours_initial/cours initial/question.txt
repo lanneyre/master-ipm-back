@@ -1,0 +1,104 @@
+Questionnaire
+
+#;1
+IM images/q4_1.jpg
+Q1 On �tudie trois textes diff�rents, la variable consid�r�e est
+Q2 taille des mots, dans notre �tude qu'est-ce qu'un individu?
+R1 Ici un individu est un texte
+R2 Il y a 3 individus, les trois textes
+R3 Il y a trois populations compos�es d'individus : les mots 
+R4 les valeurs 0 1 2 3 4 constituent les individus
+V3
+
+#;2
+IM images/q4_2.jpg
+Q1 On observe "les naus�es cons�cutives � la manipulation de produit anticanc�reux"
+Q2 la variable �tudi�e peut prendre les valeurs: "couramment"
+Q3 "rarement", "jamais", "je ne sais pas". Choisit la bonne r�ponse.
+R1 Il s'agit d'une variable qualitative ordonn�e
+R2 Il s'agit d'une variable quantitative
+R3 Il s'agit d'une variable logique
+R4 Il s'agit d'une variable qualitative non ordonn�e
+V4
+
+#;3
+IM images/q4_3.jpg
+Q1 On �tudie une population constitu�e par les �tudiants d'une universit�
+Q2 on consid�re la variable mois de naissance, cette variable est 
+Q3 cod�e sous forme d'un nombre de 1 � 12. Choisit la bonne r�ponse.
+R1 Il s'agit d'une variable qualitative ordonn�e
+R2 Il s'agit d'une variable quantitative
+R3 Il s'agit d'une variable logique
+R4 Il s'agit d'une variable qualitative non ordonn�e
+V1
+
+#;4
+IM images/q4_4.jpg
+Q1 Un tableau associ� � une variable comporte au d�part:...
+R1 2 lignes
+R2 3 lignes
+R3 4 lignes
+V2
+
+#;5
+IM images/q4_5.jpg
+Q1 Comment calcule-t-on les fr�quences en pourcentage
+Q2 dans un tableau?
+R1 effectif x 100 / effectif total
+R2 effectif x 100
+R3 effectif x effectif total /100  
+R4 effectif / effectif total
+R5 effectif total x 100 / effectif
+V1
+
+#;6
+IM images/q4_6.jpg
+Q1 Un graphique circulaire est utilis� principalement 
+Q2 pour illustrer...
+R1 Une variable qualitative ordonn�e
+R2 Une variable quantitative
+R3 Une variable logique
+R4 Une variable qualitative non ordonn�e
+V4
+
+#;7
+IM images/q4_7.jpg
+Q1 Comment calcule t'on dans un histogramme la hauteur des bandes?
+R1 Le p�rimetre de la bande doit �tre proportionnelle � l'effectif
+R2 La hauteur de la bande doit �tre proportionnelle � l'effectif
+R3 L'aire de la bande doit �tre proportionnelle � l'effectif
+R4 La largeur de la bande doit �tre proportionnelle � l'effectif
+V3
+
+#;8
+IM images/q4_8.jpg
+Q1 Comment calcule t'on dans un diagramme b�ton la hauteur des bandes?
+R1 Le p�rimetre de la bande doit �tre proportionnelle � l'effectif
+R2 La hauteur de la bande doit �tre proportionnelle � l'effectif
+R3 L'aire de la bande doit �tre proportionnelle � l'effectif
+R4 La largeur de la bande doit �tre proportionnelle � l'effectif
+V2
+
+#;9
+IM images/q4_9.jpg
+Q1 On a relev� les notes de statistiques obtenues par des �tudiants
+Q2 a un partiel, 5 �tudiants ont eu 12, 6 ont eu 14 et 2 ont eu 15
+Q3 Pour repr�senter cette distribution, quel diagramme est pr�f�rable?
+R1 Un histogramme
+R2 Un diagramme circulaire
+R3 Une courbe
+R4 Un diagramme baton
+R5 Un diagramme semi circulaire
+V4
+
+#;10
+IM images/q4_10.jpg
+Q1 On a relev� le poids d'enfants de 7 ans,
+Q2 Pour repr�senter cette distribution, quel diagramme est pr�f�rable?
+R1 Un histogramme
+R2 Un diagramme circulaire
+R3 Une courbe
+R4 Un diagramme baton
+R5 Un diagramme semi circulaire
+V1
+

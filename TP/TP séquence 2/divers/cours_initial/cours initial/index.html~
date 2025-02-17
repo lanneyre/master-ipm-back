@@ -1,0 +1,36 @@
+<html >
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="CONTEXT">
+<link rel="stylesheet" type="text/css" href="general.css">
+<title>Cours de Statistiques </title>
+</head>
+
+<body>
+
+<h1>Cours de Statistiques</h1>
+<p>La séquence présentée est un court extrait du module de cours de statistique
+descriptive destiné aux étudiant de licence de sciences de l'éducation de l'université de Lille 3.<br />
+A l'origine ce cours etait déployé sous forme d'un cours magistral et d'un TD intégré de 13 X 3 heures.
+La séquence présentée ici est une reformulation fictive du premier cours et d'un exercice qui était 
+initialement destiné à être réalisé à la maison.</p>
+<p>Les curieux pourront consulter les <a href="http://noce.univ-lille1.fr/projets/caron/stat/">TP réels du cours </a></p>
+<h2> La séquence 0</h2>
+<p>Cette séquence est constituée de: </p>
+<ol>
+<li>Deux tests (la présentation est différente le contenu est identique):</li>
+     <ul>
+        <li><a href="preqcm.html ">PréTest 1</a></li>
+        <li><a href="qcm/qcm.html ">PostTest</a></li>
+     </ul>
+<li>Trois cours:</li>
+     <ul>
+        <li><a href="cours1.html">Variables</a></li>
+        <li><a href="cours2.html">Tableaux</a></li>
+        <li><a href="cours3.html">Graphiques</a></li>
+     </ul>
+<li><a href="TP00.html">Un TP</a></li>
+</ol>
+</body>
+</html>

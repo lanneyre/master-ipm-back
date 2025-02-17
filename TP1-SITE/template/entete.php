@@ -1,0 +1,1 @@
+<h1>Cours de Statistiques</h1>

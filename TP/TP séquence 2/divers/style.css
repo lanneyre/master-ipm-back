@@ -1,0 +1,235 @@
+body {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	font:11px/20px verdana, arial, helvetica, sans-serif;
+	font-family:verdana, arial, helvetica, sans-serif;
+	color:#333;
+	background:#FFFFFF url(images/fondsite.gif) repeat fixed;
+	scrollbar-face-color: #0033CC;
+	scrollbar-shadow-color: #99FFCC;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-3dlight-color: #0099FF;
+	scrollbar-darkshadow-color: #000000;
+	scrollbar-track-color: #0099FF;
+	scrollbar-arrow-color: #99FFCC;
+	}
+font {font-size:11px;
+      }
+h1 {
+	margin:0px 0px 15px 0px;
+	padding:0px;
+	font-size:28px;
+	line-height:28px;
+	font-weight:900;
+	color:#feb883;
+	}
+h2 {
+	margin:0px 0px 15px 0px;
+	padding:0px;
+	font-size:24px;
+	line-height:24px;
+	font-weight:700;
+	color:#feb883;
+	}
+h3 {
+	margin:0px 0px 15px 0px;
+	padding:0px;
+	font-size:18px;
+	line-height:18px;
+	font-weight:400;
+	color:#feb883;
+	}
+h4 {
+	margin:0px 0px 15px 0px;
+	padding:0px;
+	font-size:16px;
+	line-height:16px;
+	font-weight:400;
+	color:#feb883;
+	}
+p {
+	font:11px/20px verdana, arial, helvetica, sans-serif;
+	margin:0px 0px 16px 0px;
+	padding:0px;
+	}
+
+a {
+	color:#09c;
+	font-size:11px;
+	text-decoration:none;
+	font-weight:600;
+	font-family:verdana, arial, helvetica, sans-serif;
+	}
+a:link {color:#09c;}
+a:visited {color:#07a;}
+a:hover {background-color:#eee;}
+
+/****************************************************************************
+ * todo list
+ ***************************************************************************/
+
+div.todo {
+	color: #FF0000;
+}
+
+/****************************************************************************
+ * Page title
+ ***************************************************************************/
+
+div.pagetitle {
+	font-size: 25px;
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	color: #37c0d3;
+	text-decoration: none;
+	background-color: #ffffff;
+	border-bottom: dashed 1px navy;
+	text-align: center;
+}
+
+/****************************************************************************
+ * MENU
+ ***************************************************************************/
+
+div.menu {
+	font-weight: bold;
+	margin:15px 0px 0px 0px;
+	padding:5px;
+	text-decoration: none;
+	background-color: #eff5fe;
+	border: #4f8cbc solid 1px;
+	width: 200px;
+	float: right;
+}
+
+div.menu A:link {
+	color: #09c;
+	text-decoration: none;
+}
+
+div.menu A:visited {
+	color: #07a;
+	text-decoration: none;
+}
+
+div.menu A:active {
+	color: #09c;
+	text-decoration: none;
+}
+
+div.menu A:hover {
+	color: #09c;
+	text-decoration: none;
+	font-style: italic;
+	background-color:#eee;
+}
+
+/****************************************************************************
+ * ...
+ ***************************************************************************/
+
+div.main {
+	background-color: #ffffff;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: left;
+}
+
+div.main a:link,a:visited,a:active {
+	color: navy;
+	text-decoration: none;
+}
+
+div.main a:hover {
+	color: #0000dd;
+	text-decoration: underline;
+}
+
+/****************************************************************************
+ * Footer
+ ***************************************************************************/
+
+div.footer {
+	background-color: #eeeeee;
+	border: #000000 solid 1px;
+	text-align: center;
+	font-size: 8px;
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+/****************************************************************************
+ * Big Box (section title)
+ ***************************************************************************/
+
+div.bigbox {
+	background: #e7ffff;
+	color: #000000;
+	border-top: solid #37c0d3 1px;
+	border-bottom: solid #37c0d3 1px;
+	margin-left: 10pt;
+	margin-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-weight: bold;
+	text-align: right;
+}
+
+/****************************************************************************
+ * News
+ ***************************************************************************/
+
+div.newstitle {
+	background: #f5ffff;
+	color: #37c0d3;
+	border-top: solid #37c0d3 1px;
+	border-bottom: solid #37c0d3 1px;
+	margin-left: 10pt;
+	margin-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-weight: bold;
+	text-align: right;
+}
+
+div.news {
+	background: #ffffff;
+	color: #000000;
+	border-left: dashed #37c0d3 1px;
+	border-right: dashed #37c0d3 1px;
+	margin-left: 20pt;
+	margin-right: 20pt;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: justify;
+}
+
+/****************************************************************************
+ * Document styles
+ ***************************************************************************/
+
+div.doctitle {
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #e7ffff;
+	border-top: solid #37c0d3 1px;
+	border-bottom: solid #37c0d3 1px;
+	margin-left: 0px;
+	margin-right: 0px;
+	text-align: center;
+	width:50%;
+}
+
+div.doctype {
+	text-decoration: underline;
+}

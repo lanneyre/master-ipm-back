@@ -1,0 +1,302 @@
+BODY {
+
+  font-family: verdana,arial,helvetica,serif;
+
+  font-size:9pt;
+
+  text-align: left;
+
+  color: #000000;
+
+  background: #fef1fe;
+
+  margin-left: 40px}
+
+
+
+P {
+
+  font-family: verdana,arial,helvetica,serif;
+
+  font-size:9pt;
+
+  margin-left: 1em;
+
+  margin-right: 1em;
+
+  text-align: left}
+
+
+
+PRE {
+
+  font-family: monospace;
+
+  font-size: 10pt;
+
+  background: #8ecdfe;
+
+  margin-left: 1em}
+
+  
+
+H1 {
+
+  font-family: cursive;
+
+  font-size: 22pt;
+
+  font-style: italic;
+
+  font-weight: bold;
+
+  color: #f05500;
+
+  text-align: right}
+
+
+
+H2 {
+
+  font-family: cursive;
+
+  font-size: 18pt;
+
+  color: #cc2900;
+
+ }
+
+
+
+H3 {
+
+  font-family: cursive;
+
+  font-size: 16pt;
+
+  color: #7c2807
+
+}
+
+
+
+H4 {
+
+  font-family: cursive;
+
+  font-size: 14pt;
+
+}
+
+
+
+UL {
+
+  font-family: verdana,arial,helvetica,serif;
+
+  font-size:9pt;
+
+  list-style-type: disc}
+
+
+
+OL {
+
+  font-family: verdana,arial,helvetica,serif;
+
+  font-size:9pt;
+
+  list-style-type: decimal}
+
+
+
+TABLE {
+
+  font-family: verdana,arial,helvetica,serif;
+
+  font-size:9pt;
+
+  margin-left: 1em;
+
+  margin-right: 1em;
+
+  border-style: none}
+
+
+
+CAPTION {
+
+  font-family: verdana,arial,helvetica,serif;
+
+  font-size:9pt;
+
+  font-weight: bold;
+
+  text-align: left}
+
+
+
+TH {
+
+  font-family: verdana,arial,helvetica,serif;
+
+  font-size:8pt;
+
+  font-weight: bold;
+
+  text-align: left;
+
+  color: #000000;
+
+  background: #C8C8C8}
+
+
+
+TD {
+
+  font-family: verdana,arial,helvetica,serif;
+
+  font-size:9pt;}
+
+
+
+.fondgris {
+
+  background: #EEEEEE}
+
+
+
+.fondbleu {
+
+  background: #b2e1fe}
+
+  
+
+.name {
+
+  font-family: verdana,arial,helvetica,serif;
+
+  font-size:9pt;
+
+  font-weight: bold;
+
+  color: #000000;
+
+  background: #D8D8D8;
+
+  text-align: right}
+
+
+
+.value {
+
+  font-family: verdana,arial,helvetica,serif;
+
+  font-size:9pt;
+
+  color: #000000;
+
+  background: #E8E8E8;
+
+  text-align: left}
+
+
+
+.example {
+
+  font-family: monospace;
+
+  font-size:9pt;
+
+  color: #000000;
+
+  background: #E8E8E8;
+
+  text-align: left}
+
+
+
+DL {
+
+  color: #000000;
+
+  background: #F0F0F0;}
+
+
+
+DT {
+
+ font-family: verdana,arial,helvetica,serif;
+
+ font-weight: bold}
+
+
+
+DD {
+
+ font-family: verdana,arial,helvetica,serif;}
+
+
+
+BLOCKQUOTE {
+
+ font-family: fantasy;
+
+ font-size:9pt;
+
+ color: #000000;
+
+ background: ##feeeb6}
+
+
+
+CODE { 
+
+  font-family: monospace;
+
+  font-size:9pt}
+
+
+
+A:LINK 
+
+  { font-family: cursive,Brush Script;
+
+    font-size: 12pt;
+
+    text-decoration: underline;
+
+    color: #006699}
+
+
+
+A:VISITED {
+
+    font-family: cursive,Brush Script;
+
+    font-size: 12pt;
+
+    text-decoration: underline;
+
+    color=#288961}
+
+
+
+A:HOVER {
+
+    font-family: cursive,Brush Script;
+
+    font-size: 12pt;
+
+    text-decoration: underline;
+
+  color="#28ad61"}
+
+
+
+HR {
+
+ margin: 0em 0em 0em 0em}
+
+ 
+

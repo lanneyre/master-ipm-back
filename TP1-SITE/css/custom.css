@@ -1,0 +1,64 @@
+.qcm {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.qcm .question {
+    display: none;
+    opacity: 0;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.qcm .question.activeq {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.qcm .question.next {
+    transform: translateX(100%);
+}
+
+.center {
+    text-align: center;
+}
+
+.navigationqcm {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.navigationqcm div {
+    text-align: center;
+}
+
+.navigationqcm ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+}
+
+.navigationqcm ul a {
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.navigationqcm ul a:hover {
+    text-decoration: underline;
+}
+
+.success {
+    color: darkcyan;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}

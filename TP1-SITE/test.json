@@ -1,0 +1,104 @@
+[
+    {
+        "Question": "On étudie trois textes différents, la variable considérée est la taille des mots, dans notre étude qu'est-ce qu'un individu?",
+        "Reponses": [
+            ["Ici un individu est un texte", "FALSE"],
+            ["Il y a 3 individus, les trois textes", "FALSE"],
+            ["Il y a trois populations composées d'individus : les mots ", "TRUE"],
+            ["les valeurs 0 1 2 3 4 constituent les individus", "FALSE"]
+        ],
+        "Img": "images/q4_1.jpg"
+    },
+    {
+        "Question": "On observe \"les nausées consécutives à la manipulation de produit anticancéreux\" la variable étudiée peut prendre les valeurs: \"couramment\" \"rarement\", \"jamais\", \"je ne sais pas\". Choisit la bonne réponse.",
+        "Reponses": [
+            [" Il s'agit d'une variable qualitative ordonnée", "FALSE"],
+            ["Il s'agit d'une variable quantitative", "FALSE"],
+            ["Il s'agit d'une variable logique", "FALSE"],
+            ["Il s'agit d'une variable qualitative non ordonnée", "TRUE"]
+        ],
+        "Img": "images/q4_2.jpg"
+    },
+    {
+        "Question": "On étudie une population constituée par les étudiants d'une université, on considère la variable mois de naissance, cette variable est codée sous forme d'un nombre de 1 à 12. Choisit la bonne réponse.",
+        "Reponses": [
+            [" Il s'agit d'une variable qualitative ordonnée", "TRUE"],
+            ["Il s'agit d'une variable quantitative", "FALSE"],
+            ["Il s'agit d'une variable logique", "FALSE"],
+            ["Il s'agit d'une variable qualitative non ordonnée", "FALSE"]
+        ],
+        "Img": "images/q4_3.jpg"
+    },
+    {
+        "Question": "Un tableau associé à une variable comporte au départ:...",
+        "Reponses": [
+            ["2 lignes", "FALSE"],
+            ["3 lignes", "TRUE"],
+            ["4 lignes", "FALSE"]
+        ],
+        "Img": "images/q4_4.jpg"
+    },
+    {
+        "Question": "Comment calcule-t-on les fréquences en pourcentage dans un tableau ?",
+        "Reponses": [
+            ["effectif x 100 / effectif total", "TRUE"],
+            ["effectif x 100", "FALSE"],
+            ["effectif x effectif total /100", "FALSE"],
+            ["effectif / effectif total", "FALSE"],
+            ["effectif total x 100 / effectif", "FALSE"]
+        ],
+        "Img": "images/q4_5.jpg"
+    },
+    {
+        "Question": "Un graphique circulaire est utilisé principalement pour illustrer...",
+        "Reponses": [
+            [" Il s'agit d'une variable qualitative ordonnée", "FALSE"],
+            ["Il s'agit d'une variable quantitative", "FALSE"],
+            ["Il s'agit d'une variable logique", "FALSE"],
+            ["Il s'agit d'une variable qualitative non ordonnée", "TRUE"]
+        ],
+        "Img": "images/q4_6.jpg"
+    },
+    {
+        "Question": "Comment calcule t'on dans un histogramme la hauteur des bandes ?",
+        "Reponses": [
+            ["Le périmetre de la bande doit être proportionnelle à l'effectif", "FALSE"],
+            ["La hauteur de la bande doit être proportionnelle à l'effectif", "FALSE"],
+            ["L'aire de la bande doit être proportionnelle à l'effectif", "TRUE"],
+            ["La largeur de la bande doit être proportionnelle à l'effectif", "FALSE"]
+        ],
+        "Img": "images/q4_7.jpg"
+    },
+    {
+        "Question": "Comment calcule t'on dans un diagramme bâton la hauteur des bandes ?",
+        "Reponses": [
+            ["Le périmetre de la bande doit être proportionnelle à l'effectif", "FALSE"],
+            ["La hauteur de la bande doit être proportionnelle à l'effectif", "TRUE"],
+            ["L'aire de la bande doit être proportionnelle à l'effectif", "FALSE"],
+            ["La largeur de la bande doit être proportionnelle à l'effectif", "FALSE"]
+        ],
+        "Img": "images/q4_8.jpg"
+    },
+    {
+        "Question": "On a relevé les notes de statistiques obtenues par des étudiants a un partiel, 5 étudiants ont eu 12, 6 ont eu 14 et 2 ont eu 15. Pour représenter cette distribution, quel diagramme est préférable?",
+        "Reponses": [
+            ["Un histogramme", "FALSE"],
+            ["Un diagramme circulaire", "FALSE"],
+            ["Une courbe", "FALSE"],
+            ["Un diagramme baton", "TRUE"],
+            ["Un diagramme semi circulaire", "FALSE"]
+        ],
+        "Img": "images/q4_9.jpg"
+    },
+    {
+        "Question": "On a relevé le poids d'enfants de 7 ans, Pour représenter cette distribution, quel diagramme est préférable ?",
+        "Reponses": [
+            ["Un histogramme", "TRUE"],
+            ["Un diagramme circulaire", "FALSE"],
+            ["Une courbe", "FALSE"],
+            ["Un diagramme baton", "FALSE"],
+            ["Un diagramme semi circulaire", "FALSE"]
+        ],
+        "Img": "images/q4_10.jpg"
+    }
+]

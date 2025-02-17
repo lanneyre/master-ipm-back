@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<utilisateurs>
+ <identite id="1">
+   <nom>caron</nom>
+   <prenom>pierre</prenom>
+   <lieu>calais</lieu>
+   <date>1963</date>
+ </identite>
+ <identite id="2">
+   <nom>caron</nom>
+   <prenom>victoire</prenom>
+   <lieu>lille</lieu>
+   <date>2007</date>
+ </identite>
+</utilisateurs>
