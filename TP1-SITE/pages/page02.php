@@ -58,3 +58,10 @@ echo '<form method="post" action="checkCQM.php" class="container qcm" id="QCM">'
 </div>
 <?php
 echo '</form>';
+?>
+<div class="row">
+    <div class="12u center">
+        <br>
+        <a href="index.php?page=7">Statistiques du test</a>
+    </div>
+</div>

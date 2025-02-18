@@ -8,6 +8,9 @@ if ($page != 0) {
         case 6:
             echo '<a href="index.php?page=6">Le TP</a> >> ';
             break;
+        case 7:
+            echo '<a href="index.php?page=2">Test</a> >> <a href="index.php?page=7">Statistiques</a> >> ';
+            break;
         default:
             echo '<a href="index.php?page=1">Cours</a> >> ';
             switch ($_GET["page"]) {
