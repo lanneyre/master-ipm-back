@@ -15,10 +15,10 @@
     $u = "";
     if (is_file($file)) {
         $users = json_decode(file_get_contents($file));
-        $users->$id->lieu = $_GET["lieu"];
-        $users->$id->date = (new DateTime())->format("Y-m-d H:i:s");
+        $users->personnes->$id->lieu = $_GET["lieu"];
+        $users->personnes->$id->date = (new DateTime())->format("Y-m-d H:i:s");
         file_put_contents($file, json_encode($users));
-        echo "<p>" . $users->$id->prenom . " " . $users->$id->nom . " est " . $users->$id->lieu . ".";
+        echo "<p>" . $users->personnes->$id->prenom . " " . $users->personnes->$id->nom . " est " . $users->personnes->$id->lieu . ".";
     }
     ?>
 </body>

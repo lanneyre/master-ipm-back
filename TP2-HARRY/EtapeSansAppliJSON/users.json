@@ -1,1 +1,49 @@
-{"1":{"nom":"WEASLEY","prenom":"Ron","lieu":"au magasin Weasley, Farces pour sorciers fac\u00e9tieux","date":"2025-02-26 09:03:23"},"2":{"id":2,"nom":"POTTER","prenom":"Harry","lieu":"\u00e0 la Cabane hurlante","date":"2025-02-26 09:00:26.654969"}}
+{
+    "personnes": {
+        "1": {
+            "nom": "WEASLEY",
+            "prenom": "Ron",
+            "img": "Ron.jpg",
+            "lieu": "Banque Gringotts",
+            "date": "2025-02-26 10:57:54"
+        },
+        "2": {
+            "id": 2,
+            "nom": "POTTER",
+            "prenom": "Harry",
+            "img": "Harry.jpg",
+            "lieu": "Les Trois Balais",
+            "date": "2025-02-26 10:59:49"
+        }
+    },
+    "localisations": {
+        "Maison": {
+            "text": "\u00e0 la maison",
+            "img": "maison.jpg"
+        },
+        "Poudlard": {
+            "text": "\u00e0 Poudlard",
+            "img": "poudlard.jpg"
+        },
+        "Les Trois Balais": {
+            "text": "\u00e0 la taverne Les Trois Balais",
+            "img": "taverne.jpg"
+        },
+        "Cabane hurlante": {
+            "text": "\u00e0 la Cabane hurlante",
+            "img": "cabaneHurlante.webp"
+        },
+        "Weasley, Farces pour sorciers fac\u00e9tieux": {
+            "text": "au magasin Weasley, Farces pour sorciers fac\u00e9tieux",
+            "img": "magasin.jpeg"
+        },
+        "Ollivander - Fabricants de baguettes magiques": {
+            "text": "chez Ollivander - Fabricants de baguettes magiques",
+            "img": "ollivander.jpg"
+        },
+        "Banque Gringotts": {
+            "text": "\u00e0 la banque Banque Gringotts",
+            "img": "Gringotts.png"
+        }
+    }
+}
