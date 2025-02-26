@@ -3,14 +3,13 @@
  <identite id="1">
    <nom>Weasley</nom>
    <prenom>Ron</prenom>
-   <lieu></lieu>
-   <date></date>
+   <lieu>à la taverne Les Trois Balais</lieu>
+   <date>2025-02-26 08:39:20</date>
  </identite>
  <identite id="2">
    <nom>Potter</nom>
    <prenom>Harry</prenom>
-   <lieu></lieu>
-   <date></date>
+   <lieu/>
+   <date/>
  </identite>
 </utilisateurs>
-
