@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<utilisateurs>
+ <identite id="1">
+   <nom>Weasley</nom>
+   <prenom>Ron</prenom>
+   <lieu></lieu>
+   <date></date>
+ </identite>
+ <identite id="2">
+   <nom>Potter</nom>
+   <prenom>Harry</prenom>
+   <lieu></lieu>
+   <date></date>
+ </identite>
+</utilisateurs>
+
