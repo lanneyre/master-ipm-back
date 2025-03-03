@@ -12,6 +12,10 @@
       "supportsTablet": true,
       "config": {
         "googleMapsApiKey": "AIzaSyB_1sbSZyziW0v7mqf52_bLlagK_kLIMR"
+      },
+      "bundleIdentifier": "com.lanneyre.Front",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {

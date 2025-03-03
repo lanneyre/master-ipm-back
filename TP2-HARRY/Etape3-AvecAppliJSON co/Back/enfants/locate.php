@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($ok) {
         http_response_code(200);
-        echo json_encode(["success"  => "L'enfant est modifié"]);
+        echo json_encode(["success"  => "La position a été modifié"]);
     } else {
         http_response_code(400);
         echo json_encode(["error"  => "L'enfant n'existe pas"]);
@@ -54,5 +54,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 http_response_code(400);
-echo json_encode(["error"  => "Pas la bonne method"]);
+echo json_encode(["error"  => "Pas la bonne methode"]);
 exit;

@@ -2,10 +2,10 @@ import { Text, View, StyleSheet } from 'react-native';
 import { useEffect, useState } from 'react';
 
 import React from 'react';
-import MapView, { Marker, PROVIDER_DEFAULT, PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 
 import { LatLng } from '@/models/LatLng';
-import { Personne } from '@/models/Personne';
+//import { Personne } from '@/models/Personne';
 
 
 const urlServeur = "https://master-ipm.remi-lanney.com/TP2-HARRY/Etape3-AvecAppliJSON/Back/"
@@ -20,10 +20,15 @@ export default function mc() {
             const response = await fetch(urlServeur + 'enfants/all.php');
             const json = await response.json();
             setLoc(json);
+            console.log(json);
+
         } catch (error) {
             console.error(error);
         }
     }
+
+    console.log(localisations);
+
     const INITIAL_REGION = {
         latitude: 46.9,
         longitude: 2.5,
@@ -34,9 +39,10 @@ export default function mc() {
     useEffect(() => {
         getLocations();
     }, []);
+
     return (
         <View style={styles.container}>
-            <MapView style={styles.map} provider={PROVIDER_DEFAULT} initialRegion={INITIAL_REGION}>
+            <MapView style={styles.map} provider={PROVIDER_GOOGLE} initialRegion={INITIAL_REGION} loadingEnabled={true}>
                 {localisations.map((loc) => (
                     <Marker
                         coordinate={loc.LatLng}

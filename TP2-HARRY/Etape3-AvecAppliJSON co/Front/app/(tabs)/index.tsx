@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { LatLng } from '@/models/LatLng';
 import { Redirect } from 'expo-router';
 import { useSession } from '../../ctx';
+import ModalCustom from '@/components/Modal';
 
 
 
@@ -24,7 +25,15 @@ export default function Index() {
   }
 
   const user = JSON.parse(session)
-
+  const onModalOpen = () => {
+    setIsModalVisible(true);
+  };
+  const onModalClose = () => {
+    setIsModalVisible(false);
+  };
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const [titreModal, setTitreModal] = useState<string>("");
+  const [textModal, setTextModal] = useState<string>("");
 
   const setPersonnes = async (enfant: string, LatLng: LatLng) => {
     try {
@@ -36,7 +45,16 @@ export default function Index() {
         body: JSON.stringify({ "enfant": enfant, "LatLng": LatLng }),
       });
       const json = await response.json();
-      console.log(json);
+      //console.log(json);
+      if (response.status == 200) {
+        setTitreModal("Success");
+        setIsModalVisible(true);
+        setTextModal(json.success)
+      } else {
+        setTitreModal("Error");
+        setIsModalVisible(true);
+        setTextModal(json.error)
+      }
 
     } catch (error) {
       console.error(error);
@@ -55,6 +73,7 @@ export default function Index() {
     //console.log(LatLng);
 
   };
+
   useEffect(() => {
     async function getCurrentLocation() {
 
@@ -79,6 +98,9 @@ export default function Index() {
       </Link> */}
       <CircleButton onPress={locateMe} icon='locate' />
       <Text style={styles.text}>Je suis bien arrivé, localise moi pour l'horloge</Text>
+      <ModalCustom isVisible={isModalVisible} onClose={onModalClose} titre={titreModal}>
+        <Text style={styles.text}>{textModal}</Text>
+      </ModalCustom>
     </View>
   );
 }
@@ -92,7 +114,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#fff',
-    marginTop: 20
+    // marginTop: 20,
+    paddingHorizontal: 20,
+    marginVertical: 20
   },
   button: {
     fontSize: 20,

@@ -12,5 +12,5 @@ if (is_file($file)) {
     $liste = ["Error" => "fichier introuvable"];
 }
 
-
+http_response_code(200);
 echo json_encode($liste);

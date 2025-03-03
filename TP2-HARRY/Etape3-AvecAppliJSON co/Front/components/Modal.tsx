@@ -1,0 +1,54 @@
+import { Modal, View, Text, Pressable, StyleSheet } from 'react-native';
+import { PropsWithChildren } from 'react';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
+type Props = PropsWithChildren<{
+    isVisible: boolean;
+    onClose: () => void;
+    titre: string;
+}>;
+
+export default function ModalCustom({ isVisible, children, onClose, titre }: Props) {
+    return (
+        <Modal animationType="slide" transparent={true} visible={isVisible}>
+            <View style={styles.modalContent}>
+                <View style={styles.titleContainer}>
+                    <Text style={titre == "Success" ? styles.titleSuccess : styles.titleError}>{titre}</Text>
+                    <Pressable onPress={onClose}>
+                        <MaterialIcons name="close" color="#fff" size={22} />
+                    </Pressable>
+                </View>
+                {children}
+            </View>
+        </Modal>
+    );
+}
+
+const styles = StyleSheet.create({
+    modalContent: {
+        width: '100%',
+        backgroundColor: '#25292e',
+        borderTopRightRadius: 18,
+        borderTopLeftRadius: 18,
+        position: 'absolute',
+        bottom: 0,
+    },
+    titleContainer: {
+        height: 40,
+        backgroundColor: '#464C55',
+        borderTopRightRadius: 10,
+        borderTopLeftRadius: 10,
+        paddingHorizontal: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    titleSuccess: {
+        color: 'green',
+        fontSize: 16,
+    },
+    titleError: {
+        color: 'red',
+        fontSize: 16,
+    }
+});
