@@ -12,7 +12,7 @@ import { useSession } from '../../ctx';
 
 
 //const urlServeur = "http://192.168.41.87/ipm-backend/TP2-HARRY/Etape3-AvecAppliJSON%20co/Back/"
-const urlServeur = "https://master-ipm.remi-lanney.com/TP2-HARRY/Etape3-AvecAppliJSON%20co/Back/"
+const urlServeur = "https://master-ipm.remi-lanney.com/TP2-HARRY/Etape3-AvecAppliJSON/Back/"
 
 
 export default function Index() {

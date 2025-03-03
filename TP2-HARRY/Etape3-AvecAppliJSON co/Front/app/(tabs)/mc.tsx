@@ -2,13 +2,13 @@ import { Text, View, StyleSheet } from 'react-native';
 import { useEffect, useState } from 'react';
 
 import React from 'react';
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { Marker, PROVIDER_DEFAULT, PROVIDER_GOOGLE } from 'react-native-maps';
 
 import { LatLng } from '@/models/LatLng';
 import { Personne } from '@/models/Personne';
 
 
-const urlServeur = "https://master-ipm.remi-lanney.com/TP2-HARRY/Etape3-AvecAppliJSON%20co/Back/"
+const urlServeur = "https://master-ipm.remi-lanney.com/TP2-HARRY/Etape3-AvecAppliJSON/Back/"
 
 // AIzaSyB_1sbSZyziW0v7mqf52_bLlagK_kLIMRk
 
@@ -36,7 +36,7 @@ export default function mc() {
     }, []);
     return (
         <View style={styles.container}>
-            <MapView style={styles.map} provider={PROVIDER_GOOGLE} initialRegion={INITIAL_REGION}>
+            <MapView style={styles.map} provider={PROVIDER_DEFAULT} initialRegion={INITIAL_REGION}>
                 {localisations.map((loc) => (
                     <Marker
                         coordinate={loc.LatLng}

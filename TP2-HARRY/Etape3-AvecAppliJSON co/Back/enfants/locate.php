@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dataIn = json_decode($rawData, true);
 
     if (empty($dataIn["enfant"])) {
+        http_response_code(400);
         echo json_encode(["error"  => "Il manque le paramètre enfant"]);
         exit;
     }
@@ -44,11 +45,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($ok) {
+        http_response_code(200);
         echo json_encode(["success"  => "L'enfant est modifié"]);
     } else {
+        http_response_code(400);
         echo json_encode(["error"  => "L'enfant n'existe pas"]);
     }
     exit;
 }
+http_response_code(400);
 echo json_encode(["error"  => "Pas la bonne method"]);
 exit;
