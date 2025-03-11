@@ -1,0 +1,17 @@
+<?xml version="1.0">
+<utilisateurs>
+<identite>
+<nom>George</nom>
+<lieu>&#xC0; la maison</lieu>
+<date>25 Feb 2025, 12:37</date>
+</identite>
+<identite>
+<nom>Ron</nom>
+<lieu>&#xC0; la banque Gringotts</lieu>
+<date>25 Feb 2025, 12:36</date>
+</identite>
+<identite><nom>Harry</nom>
+<lieu>&#xC0; Poudlard</lieu>
+<date>25 Feb 2025, 12:41</date>
+</identite>
+<identite><nom>Fred</nom><lieu>Chez Ollivander - Fabricants de baguettes magiques</lieu><date>04 Mar 2025, 21:01</date></identite></utilisateurs>
