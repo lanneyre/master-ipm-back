@@ -10,4 +10,9 @@ class Galerie extends Model
 {
     /** @use HasFactory<\Database\Factories\GalerieFactory> */
     use HasFactory, SoftDeletes;
+
+    public function animal()
+    {
+        return $this->belongsTo(Animal::class);
+    }
 }

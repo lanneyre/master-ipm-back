@@ -13,6 +13,7 @@ class CritereController extends Controller
     public function index()
     {
         //
+        return view("crits", ["criteres" => Critere::all()]);
     }
 
     /**

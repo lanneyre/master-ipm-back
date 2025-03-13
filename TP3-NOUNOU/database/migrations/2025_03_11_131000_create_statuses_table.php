@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('statuses', function (Blueprint $table) {
             $table->id();
             $table->text("nom");
+            $table->text("description");
             $table->timestamps();
             $table->softDeletes();
         });

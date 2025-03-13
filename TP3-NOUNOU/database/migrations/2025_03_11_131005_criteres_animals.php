@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('criteres_animals', function (Blueprint $table) {
+        Schema::create('animal_critere', function (Blueprint $table) {
             $table->foreignIdFor(Critere::class)->constrained();
             $table->foreignIdFor(Animal::class)->constrained();
             $table->timestamps();

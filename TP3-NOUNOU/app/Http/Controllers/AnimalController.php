@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Animal;
+use App\Models\Race;
 use Illuminate\Http\Request;
 
 class AnimalController extends Controller
@@ -13,6 +14,7 @@ class AnimalController extends Controller
     public function index()
     {
         //
+        //return response()->json(Animal::with(['race', 'race_mere', 'race_pere', 'galeries', 'criteres'])->get());
     }
 
     /**

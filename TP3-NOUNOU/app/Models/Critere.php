@@ -10,4 +10,9 @@ class Critere extends Model
 {
     /** @use HasFactory<\Database\Factories\CritereFactory> */
     use HasFactory, SoftDeletes;
+
+    public function animals()
+    {
+        return $this->belongsToMany(Animal::class, "animal_critere");
+    }
 }
