@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\CritereController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,5 +11,6 @@ Route::get('/', function () {
 
 Route::resources([
     "animal" => AnimalController::class,
-    "critere" => CritereController::class
+    "critere" => CritereController::class,
+    "service" => ServiceController::class
 ]);

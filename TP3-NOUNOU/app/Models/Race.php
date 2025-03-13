@@ -10,4 +10,9 @@ class Race extends Model
 {
     /** @use HasFactory<\Database\Factories\RaceFactory> */
     use HasFactory, SoftDeletes;
+
+    public function animals()
+    {
+        return $this->hasMany(Animal::class, "race");
+    }
 }
