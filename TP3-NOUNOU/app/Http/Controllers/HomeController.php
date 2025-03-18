@@ -10,6 +10,7 @@ use App\Models\Espece;
 use App\Models\Race;
 use App\Models\Temoignage;
 use App\Models\Service;
+use App\Models\Status;
 
 class HomeController extends Controller
 {
@@ -30,9 +31,9 @@ class HomeController extends Controller
             $offset = 0;
         }
 
-        $nbAnimaux = Animal::with(['galeries', 'raceAnimal'])->count();
-
-        return view('home', ["pages" => $pages, "vedettes" => Animal::vedettes(), "Especes" => Espece::all(), "criteres" => Critere::all(), "animaux" => Animal::with(['galeries', 'raceAnimal'])->skip($offset)->take($limit)->get(), "nbAnimaux" => $nbAnimaux, "nbAperP" => $limit, "temoignages" => Temoignage::all(), "services" => Service::all(), "request" => $request]);
+        $nbAnimaux = Animal::with(['statuses', 'galeries', 'raceAnimal'])->whereRelation("statuses", "status_id", [1, 2, 4, 5, 8, 9, 10])->count();
+        $status = Status::whereIn("id", [1, 2, 4, 5, 8, 9, 10])->get();
+        return view('home', ["pages" => $pages, "vedettes" => Animal::vedettes(), "Especes" => Espece::all(), "criteres" => Critere::all(), "animaux" => Animal::with(['statuses', 'galeries', 'raceAnimal'])->whereRelation("statuses", "status_id", [1, 2, 4, 5, 8, 9, 10])->skip($offset)->take($limit)->get(), "nbAnimaux" => $nbAnimaux, "nbAperP" => $limit, "temoignages" => Temoignage::all(), "services" => Service::all(), "request" => $request]);
     }
 
     public function imgService()

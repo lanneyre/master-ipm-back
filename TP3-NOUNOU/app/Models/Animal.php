@@ -61,6 +61,7 @@ class Animal extends Model
     {
         return $this->belongsToMany(Status::class, "status_animals");
     }
+
     public static function vedettes(): array
     {
         $especes = Espece::all();
