@@ -1,0 +1,373 @@
+:root {
+    --vert: #1C7C54;
+    --vertpale: #DDF1CF;
+    --blanc: #fff;
+    --bleu: #A5B5EB;
+    --transparent: rgba(255, 255, 255, 0.5);
+    --noir: rgba(0, 0, 0, 0.7);
+}
+
+body {
+    background-color: var(--vert);
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2 {
+    text-align: center;
+    width: 100%;
+    color: var(--blanc);
+    font-size: 56px;
+    text-shadow: var(--vert) 3px 2px 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: var(--blanc);
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    width: 300px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    display: block;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.btn.btn-vert {
+    background-color: var(--vert);
+    color: var(--blanc);
+}
+
+.btn.btn-vert:hover {
+    background-color: var(--vertpale);
+    color: var(--vert);
+}
+
+.btn.btn-vertpale {
+    color: var(--vert);
+    background-color: var(--vertpale);
+}
+
+.btn.btn-vertpale:hover {
+    background-color: var(--vert);
+    color: var(--blanc);
+}
+
+/* Barre de navigation  */
+nav {
+    width: 100%;
+    position: fixed;
+    background-color: var(--vert);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    /* margin: 0; */
+    padding: 0;
+}
+
+nav ul li a {
+
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: var(--vertpale);
+    color: var(--vert);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--vertpale);
+
+}
+
+nav ul li a.active {
+    border: 1px solid var(--blanc);
+}
+
+nav ul li a:hover {
+    background-color: var(--vert);
+    color: var(--vertpale);
+}
+
+/* Fin Barre de navigation  */
+
+main>section {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--vertpale);
+    box-sizing: border-box;
+}
+
+main>section:nth-child(even) {
+    background-color: var(--vert);
+}
+
+
+main>section>.container {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#accueil {
+    background-image: url("/storage/Toutous.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#accueil>.container {
+    background-color: var(--transparent);
+    padding-top: 70px;
+    height: calc(100% - 70px);
+}
+
+.nosVedettes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+}
+
+.adoptezNous {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+figure.vedettes {
+    max-width: 15%;
+}
+
+figure.vedettes>img {
+    border-radius: 10px;
+    border: 1px solid var(--blanc);
+}
+
+figure.vedettes>figcaption {
+    border-radius: 10px;
+    border: 1px solid var(--blanc);
+    background-color: var(--blanc);
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+figure.vedettes>figcaption>small {
+    display: block;
+    font-weight: normal;
+}
+
+
+#Aboutus {
+    display: flex;
+}
+
+#Aboutus>article {
+    width: 50%;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#Aboutus>article>h2 {
+    text-align: left;
+}
+
+#Aboutus>article>p {
+    font-size: 1.6rem;
+}
+
+#Aboutus>aside {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bleu);
+}
+
+.cloud-container {
+    overflow: hidden;
+    clip-path: url(#cloudClip);
+    transform: scale(0.933768);
+    transform-origin: 0px 0px 0px;
+    width: 469px;
+    height: 500.129px;
+    position: relative;
+}
+
+.cloud-container>img {
+    object-fit: fill;
+    position: absolute;
+    height: 100%;
+    width: auto;
+    transform: translateX(-23%) scaleX(-1);
+}
+
+#adopter>.container {
+
+    height: calc(100% - 70px);
+    padding: 20px;
+    /* padding-top: 70px; */
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#adopter header ul {
+    padding: 0;
+    margin: 0;
+}
+
+#adopter header h2 {
+    margin-bottom: 20px;
+}
+
+#adopter ul li {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+#adopter header ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+#adopter header ul li {
+    width: 11%;
+}
+
+#adopter header ul a {
+    width: 100%;
+}
+
+#adopter article {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#adopter>.container aside {
+    width: 20%;
+    position: relative;
+}
+
+#adopter>.container article {
+    width: 80%;
+}
+
+#adopter>.container header {
+    width: 100%;
+}
+
+.adoptable {
+    width: 12%;
+    border: 2px solid var(--vert);
+    border-radius: 10px;
+    padding: 0px;
+    background-color: var(--blanc);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.adoptable img {
+    width: 100%;
+}
+
+#adopter>.container .pagination {
+    text-align: center;
+    width: 100%;
+    font-size: 1.6rem;
+    position: absolute;
+    bottom: 0;
+}
+
+#adopter>.container .pagination a {
+    text-decoration: none;
+    color: var(--vert);
+
+}
+
+.adoptable figcaption {
+    padding: 5px;
+    margin: 0;
+    text-align: left;
+    font-weight: bold;
+}
+
+.adoptable figcaption small {
+    display: block;
+    font-weight: normal;
+}
+
+#temoignages {
+    padding-top: 70px;
+}
+
+#carrousselTemoignages {
+    padding-bottom: 30px;
+}
+
+.temoignage {
+    background-color: var(--vertpale);
+    width: 15%;
+    min-width: 250px;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.temoignage img {
+    border-radius: inherit;
+    border-radius: 10px 10px 0 0;
+}
+
+.temoignage figcaption {
+    padding: 5px;
+}
+
+.modale {
+    background-color: var(--noir);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modale.active {
+    display: flex;
+}
+
+.modale .fenetre {
+    width: 50%;
+    height: 50%;
+    background-color: var(--blanc);
+    border-radius: 10px;
+}

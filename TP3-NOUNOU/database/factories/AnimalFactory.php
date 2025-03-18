@@ -31,6 +31,7 @@ class AnimalFactory extends Factory
         return [
             'nom' => $this->faker->firstName,
             'description' => $this->faker->paragraph,
+            'sexe' => $this->faker->randomElement(['m', 'f']),
             'dob' => $dob,
             'race' => $race->id,
             'race_mere' => $raceMere->id,

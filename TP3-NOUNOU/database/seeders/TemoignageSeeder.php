@@ -14,6 +14,6 @@ class TemoignageSeeder extends Seeder
     public function run(): void
     {
         //
-        Temoignage::factory()->count(150)->create();
+        Temoignage::factory()->count(random_int(40, 100))->create();
     }
 }

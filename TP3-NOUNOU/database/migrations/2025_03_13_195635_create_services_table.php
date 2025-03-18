@@ -20,6 +20,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+        DB::statement("ALTER TABLE services ADD icon LONGBLOB NULL DEFAULT NULL");
         DB::statement("ALTER TABLE services ADD img1 LONGBLOB NULL DEFAULT NULL");
         DB::statement("ALTER TABLE services ADD img2 LONGBLOB NULL DEFAULT NULL");
         DB::statement("ALTER TABLE services ADD img3 LONGBLOB NULL DEFAULT NULL");

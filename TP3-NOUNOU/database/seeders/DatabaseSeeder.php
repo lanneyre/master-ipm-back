@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         // Tronquer les tables
         DB::table('criteres')->truncate();
         DB::table('statuses')->truncate();
+        DB::table('especes')->truncate();
         DB::table('races')->truncate();
         DB::table('animals')->truncate();
         DB::table('status_animals')->truncate();
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CritereSeeder::class,
             StatusSeeder::class,
+            EspeceSeeder::class,
             RaceSeeder::class,      // Assure-toi que les races sont créées en premier
             AnimalSeeder::class,   // Ajoute cette ligne
             RoleSeeder::class,

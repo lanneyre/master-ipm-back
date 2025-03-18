@@ -15,4 +15,9 @@ class Race extends Model
     {
         return $this->hasMany(Animal::class, "race");
     }
+
+    public function espece()
+    {
+        return $this->belongsTo(Espece::class, 'espece_id');
+    }
 }

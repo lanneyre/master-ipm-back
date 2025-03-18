@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text("nom");
             $table->text("description")->nullable();
             $table->date("dob")->nullable();
+            $table->text("sexe");
             $table->foreignIdFor(Race::class, "race")->nullable()->constrained();
             $table->foreignIdFor(Race::class, "race_mere")->nullable()->constrained();
             $table->foreignIdFor(Race::class, "race_pere")->nullable()->constrained();

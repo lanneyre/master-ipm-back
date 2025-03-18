@@ -12,8 +12,23 @@ class Animal extends Model
     use HasFactory;
     use SoftDeletes;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'nom',
+        'description',
+        'dob',
+        'sexe',
+        'race',
+        'race_pere',
+        'race_mere'
+    ];
 
-    public function race()
+
+    public function raceAnimal()
     {
         return $this->belongsTo(Race::class, 'race');
     }
@@ -26,6 +41,11 @@ class Animal extends Model
         return $this->belongsTo(Race::class, 'race_pere');
     }
 
+    // public function espece()
+    // {
+    //     return $this->hasOneThrough(Espece::class, Race::class,  "id", "id", "race_id", "espece_id");
+    //     //return Espece::where("espece_id", $this->race->espece_id);
+    // }
     //$table->foreignIdFor(Animal::class)->constrained();
     public function galeries()
     {
@@ -40,5 +60,17 @@ class Animal extends Model
     public function statuses()
     {
         return $this->belongsToMany(Status::class, "status_animals");
+    }
+    public static function vedettes(): array
+    {
+        $especes = Espece::all();
+        $vedettes = [];
+        foreach ($especes as $espece) {
+            # code...
+            $race = Race::where("espece_id", $espece->id)->inRandomOrder()->first();
+
+            $vedettes[] = ["Espece" => $espece, "Race" => $race, "Animal" => Animal::with(['galeries'])->where("race", $race->id)->inRandomOrder()->first()];
+        }
+        return $vedettes;
     }
 }
