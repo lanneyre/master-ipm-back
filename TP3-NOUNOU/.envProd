@@ -1,6 +1,6 @@
 APP_NAME=IPMAnimaux
 APP_ENV=local
-APP_KEY=base64:tRSDTNgq3z7u+NnqZzDcAfwwLmW3y+UBImWZBhu2sk0=
+APP_KEY=
 APP_DEBUG=false
 APP_URL=https://new-life-pets.remilanney.fr
 
