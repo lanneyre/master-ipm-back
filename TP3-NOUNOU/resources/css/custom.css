@@ -587,6 +587,7 @@ figure.vedettes>figcaption>small {
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
 .modale.active {
@@ -778,4 +779,8 @@ h4 {
     text-align: left;
     color: var(--blanc);
     font-size: 1.5rem;
+}
+
+h3#titre {
+    border-bottom: 1px solid var(--vert);
 }

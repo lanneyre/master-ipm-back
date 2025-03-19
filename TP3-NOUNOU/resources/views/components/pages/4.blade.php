@@ -52,9 +52,5 @@
         <!-- Pagination -->
         <div class="swiper-pagination"></div>
     </section>
-    <div class="modale">
-        <div class="fenetre">
-
-        </div>
-    </div>
+    @include('components.template.modale')
 </section>
