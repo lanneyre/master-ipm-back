@@ -1,5 +1,9 @@
-<div class="modale active" id="modale">
+<div class="modale" id="{{$type}}-{{$$type->id}}">
     <div class="fenetre">
-        <h3 id="titre">test</h3>
+        <span class="closeModale">x</span>
+        <h3 id="titre">{{$titre}}</h3>
+        <div class="content">
+            @yield('content-'.$$type->id)
+        </div>
     </div>
 </div>

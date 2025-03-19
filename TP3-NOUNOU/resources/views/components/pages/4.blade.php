@@ -4,7 +4,7 @@
     <section id="carrousselTemoignages" class="swiper">
         <div class="swiper-wrapper">
             @forelse ($temoignages as $temoignage)
-                <figure class="swiper-slide temoignage">
+                <figure class="swiper-slide temoignage" modale="temoignage-{{$temoignage->id}}">
                     @php
                         $img = '';
                         if (!empty($temoignage->img1)) {
@@ -52,5 +52,19 @@
         <!-- Pagination -->
         <div class="swiper-pagination"></div>
     </section>
-    @include('components.template.modale')
+    
+    @foreach ($temoignages as $temoignage)
+        @php
+            $titre = [];
+            if (!empty($temoignage->user)) {
+                $titre[] = \App\Models\User::find($temoignage->user)->name;
+            }
+            if (!empty($temoignage->animal)) {
+                $titre[] = \App\Models\Animal::find($temoignage->animal)->nom;
+            }
+            $t = sizeof($titre) == 0 ? 'Anonyme' : implode(' & ', $titre);
+        @endphp
+        
+        @include('components.template.modaleT', ["titre"=>  $t, "temoignage" => $temoignage])
+    @endforeach
 </section>

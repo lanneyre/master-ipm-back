@@ -82,4 +82,36 @@ document.addEventListener("DOMContentLoaded", function () {
     function clickNav() {
         sidenav.classList.remove("active");
     }
+
+
+
+    /* Gestion des modales */
+    const temoignages = document.querySelectorAll(".temoignage").forEach((temoignage) => {
+        temoignage.addEventListener("click", (t) => {
+            const modale = t.currentTarget.getAttribute("modale");
+            //console.log(modale);
+            
+            document.getElementById(modale).classList.add("active")
+        })
+    });
+
+    const closeModale = document.querySelectorAll(".closeModale").forEach((btn) => {        
+        btn.addEventListener("click", (t) => {
+            document.querySelectorAll(".modale.active").forEach((m)=>{
+                m.classList.remove("active")
+            })
+        })
+    });
+
+    const closeModale2 = document.querySelectorAll(".modale").forEach((btn) => {        
+        btn.addEventListener("click", (t) => {     
+            if (t.target.classList.contains("modale")){
+                document.querySelectorAll(".modale.active").forEach((m) => {
+                        m.classList.remove("active")
+                    })
+            }
+        //    
+        })
+    });
+
 });

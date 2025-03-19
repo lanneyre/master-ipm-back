@@ -596,11 +596,15 @@ figure.vedettes>figcaption>small {
 
 .modale .fenetre {
     width: 50%;
-    height: 50%;
     background-color: var(--blanc);
     border-radius: 10px;
+    position: relative;
 }
-
+@media (max-width: 800px) {
+    .modale .fenetre{
+        width: 90%;
+    }
+}
 #equipe {
     padding: 20px;
     color: var(--vert);
@@ -783,4 +787,56 @@ h4 {
 
 h3#titre {
     border-bottom: 1px solid var(--vert);
+    padding: 10px;
+    font-weight: bold;
+    color: var(--vertpale);
+    background-color: var(--vert);
+    border-radius: 10px 10px 0 0;
+}
+
+.content{
+    padding: 10px;
+    height: calc(100% - 30px);
+}
+
+.closeModale{
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 1.4rem;
+    color:var(--vertpale);
+    cursor: pointer;
+}
+.photo{
+    width: 50%;
+}
+.photos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+}
+.photos img:nth-child(1){
+    grid-area: 1 / 1 / 3 / 3;
+}
+.photos img:nth-child(2) {
+    grid-area: 1 / 3 / 2 / 4;
+}
+.photos img:nth-child(3) {
+    grid-area: 2 / 3 / 3 / 4;
+}
+.photos figcaption{
+    grid-area: 3 / 1 / 4 / 4;
+}
+.displayTemoignage{
+    display: flex;
+}
+
+.photo>h4 {
+    border-bottom: 1px solid var(--vert);
+    padding-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--vert);
 }
