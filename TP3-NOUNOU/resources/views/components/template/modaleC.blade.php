@@ -42,7 +42,7 @@
                 <textarea id="message" name="message" rows="4" required class="w-full p-2 border border-gray-300 rounded mt-1"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-vert w-full rounded transition">
+            <button type="submit" class="btn btnsmall btn-vert w-full rounded transition">
                 Envoyer
             </button>
         </form>

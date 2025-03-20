@@ -123,4 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     })
 
+    const criteres = document.querySelectorAll(".criteres").forEach((crit) => {
+        crit.addEventListener("change", (e) => {
+            document.querySelector("#criteresForm").submit();
+        });
+    });
+
 });

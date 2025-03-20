@@ -5,7 +5,7 @@
 
         <div class="adoptezNous">
             <a href="#adopter" class="btn btn-vert">Adopter un ami</a>
-            <a href="#don" class="btn btn-vertpale">Faire un don</a>
+            <a href="#don" class="btn btn-vertpale modaleContact" modale="contact-contact">Faire un don</a>
         </div>
 
         <div class="nosVedettes">

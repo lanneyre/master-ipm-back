@@ -31,9 +31,34 @@ class HomeController extends Controller
             $offset = 0;
         }
 
+        if (empty($request->espece)) {
+            if (empty($request->criteres)) {
+                $animaux = Animal::with(['statuses', 'galeries', 'raceAnimal'])->whereRelation("statuses", "status_id", [1, 2, 4, 5, 8, 9, 10])->skip($offset)->take($limit)->get();
+            } else {
+                $animaux = Animal::with(['statuses', 'galeries', 'raceAnimal', 'criteres'])
+                    ->whereRelation("statuses", "status_id", [1, 2, 4, 5, 8, 9, 10])
+                    ->whereRelation("criteres", "critere_id", $request->criteres)
+                    ->skip($offset)->take($limit)->get();
+            }
+        } else {
+            if (empty($request->criteres)) {
+                $animaux = Animal::with(['statuses', 'galeries', 'raceAnimal'])
+                    ->whereRelation("statuses", "status_id", [1, 2, 4, 5, 8, 9, 10])
+                    ->whereRelation("raceAnimal", "espece_id", $request->espece)
+                    ->skip($offset)->take($limit)->get();
+            } else {
+                $animaux = Animal::with(['statuses', 'galeries', 'raceAnimal'])
+                    ->whereRelation("statuses", "status_id", [1, 2, 4, 5, 8, 9, 10])
+                    ->whereRelation("raceAnimal", "espece_id", $request->espece)
+                    ->whereRelation("criteres", "critere_id", $request->criteres)
+                    ->skip($offset)->take($limit)->get();
+            }
+        }
+
+
         $nbAnimaux = Animal::with(['statuses', 'galeries', 'raceAnimal'])->whereRelation("statuses", "status_id", [1, 2, 4, 5, 8, 9, 10])->count();
-        $status = Status::whereIn("id", [1, 2, 4, 5, 8, 9, 10])->get();
-        return view('home', ["pages" => $pages, "vedettes" => Animal::vedettes(), "Especes" => Espece::all(), "criteres" => Critere::all(), "animaux" => Animal::with(['statuses', 'galeries', 'raceAnimal'])->whereRelation("statuses", "status_id", [1, 2, 4, 5, 8, 9, 10])->skip($offset)->take($limit)->get(), "nbAnimaux" => $nbAnimaux, "nbAperP" => $limit, "temoignages" => Temoignage::all(), "services" => Service::all(), "request" => $request]);
+        //$status = Status::whereIn("id", [1, 2, 4, 5, 8, 9, 10])->get();
+        return view('home', ["pages" => $pages, "vedettes" => Animal::vedettes(), "Especes" => Espece::all(), "criteres" => Critere::all(), "animaux" => $animaux, "nbAnimaux" => $nbAnimaux, "nbAperP" => $limit, "temoignages" => Temoignage::all(), "services" => Service::all(), "request" => $request]);
     }
 
     public function imgService()
@@ -108,17 +133,17 @@ class HomeController extends Controller
 
     public function contact(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
-            'phone' => 'required|regex:/^[0-9]{10}$/',
-            'animal' => 'required|string',
-            'message' => 'required|string|max:1000',
-        ]);
+        // $request->validate([
+        //     'name' => 'required|string|max:255',
+        //     'email' => 'required|email',
+        //     'phone' => 'required|regex:/^[0-9]{10}$/',
+        //     'animal' => 'required|string',
+        //     'message' => 'required|string|max:1000',
+        // ]);
 
         // Ici, tu peux ajouter l'envoi d'email ou l'enregistrement en BDD
         // Exemple : Mail::to('contact@association.com')->send(new ContactMail($request->all()));
 
-        return back()->with('success', 'Votre demande a bien été envoyée.');
+        return back()->with('alert', ["type" => 'error', "msg" => 'Votre demande a bien été envoyée.']);
     }
 }
