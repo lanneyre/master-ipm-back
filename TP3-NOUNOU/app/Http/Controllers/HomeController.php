@@ -10,10 +10,10 @@ use App\Models\Espece;
 use App\Models\User;
 use App\Models\Temoignage;
 use App\Models\Service;
-use App\Models\Status;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\ValidationException;
 
 class HomeController extends Controller
 {
@@ -135,18 +135,24 @@ class HomeController extends Controller
 
     public function contact(Request $request)
     {
-        // $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'email' => 'required|email',
-        //     'phone' => 'required|regex:/^[0-9]{10}$/',
-        //     'animal' => 'required|string',
-        //     'message' => 'required|string|max:1000',
-        // ]);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'phone' => 'required|regex:/^[0-9]{10}$/',
+            'animal' => 'string',
+            'motif' => 'required|string',
+            'message' => 'required|string|max:1000',
+        ]);
+
+
 
         // Ici, tu peux ajouter l'envoi d'email ou l'enregistrement en BDD
         // Exemple : Mail::to('contact@association.com')->send(new ContactMail($request->all()));
+        $contactData = $request->only(['name', 'email', 'phone', 'motif', 'message']);
 
-        return back()->with('alert', ["type" => 'error', "msg" => 'Votre demande a bien été envoyée.']);
+        Mail::to('lanneyre@hotmail.com')->send(new ContactMail($contactData));
+
+        return back()->with('alert', ["type" => 'success', "msg" => 'Votre demande a bien été envoyée.']);
     }
 
     public function login(Request $request)
@@ -185,7 +191,7 @@ class HomeController extends Controller
         return back()->with('alert', ["type" => 'success', "msg" => 'Inscription réussie']);
     }
 
-    public function logout(Request $request)
+    public function logout()
     {
         Auth::logout();
         return back()->with('alert', ["type" => 'success', "msg" => 'Deconnexion réussie']);
