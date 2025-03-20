@@ -24,7 +24,9 @@
             <div>#suivez nous sur les réseaux</div>
         </div>
 
-        <a href="#"class="btn btn-vertpale">Nous contacter</a>
+        <a href="#contact" class="btn btn-vertpale modaleContact " modale="contact-contact">Nous contacter</a>
+        @include('components.template.modaleC', ['titre' => 'Nous contacter'])
+
     </article>
     <aside>
         <svg width="0" height="0">

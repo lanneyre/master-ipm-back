@@ -90,28 +90,37 @@ document.addEventListener("DOMContentLoaded", function () {
         temoignage.addEventListener("click", (t) => {
             const modale = t.currentTarget.getAttribute("modale");
             //console.log(modale);
-            
+
             document.getElementById(modale).classList.add("active")
         })
     });
 
-    const closeModale = document.querySelectorAll(".closeModale").forEach((btn) => {        
+    const closeModale = document.querySelectorAll(".closeModale").forEach((btn) => {
         btn.addEventListener("click", (t) => {
-            document.querySelectorAll(".modale.active").forEach((m)=>{
+            document.querySelectorAll(".modale.active").forEach((m) => {
                 m.classList.remove("active")
             })
         })
     });
 
-    const closeModale2 = document.querySelectorAll(".modale").forEach((btn) => {        
-        btn.addEventListener("click", (t) => {     
-            if (t.target.classList.contains("modale")){
+    const closeModale2 = document.querySelectorAll(".modale").forEach((btn) => {
+        btn.addEventListener("click", (t) => {
+            if (t.target.classList.contains("modale")) {
                 document.querySelectorAll(".modale.active").forEach((m) => {
-                        m.classList.remove("active")
-                    })
+                    m.classList.remove("active")
+                })
             }
-        //    
+            //
         })
     });
+
+    const contact = document.querySelectorAll(".modaleContact").forEach((c) => {
+        c.addEventListener("click", (e) => {
+            const modale = e.currentTarget.getAttribute("modale");
+            // console.log(modale);
+
+            document.getElementById(modale).classList.add("active")
+        });
+    })
 
 });

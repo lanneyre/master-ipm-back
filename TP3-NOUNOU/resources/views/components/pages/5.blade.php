@@ -7,7 +7,7 @@
             professionnels passionnés et de bénévoles
             engagés qui travaillent chaque jour pour
             offrir une seconde chance aux animaux.</p>
-        <a href="#benevole" class="btn btn-vert">Devenir bénévole</a>
+        <a href="#benevole" class="btn btn-vert modaleContact" modale="contact-contact">Devenir bénévole</a>
     </article>
     <aside>
         @foreach (\App\models\User::whereIn('role', [1, 3])->get() as $user)

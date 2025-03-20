@@ -1,19 +1,18 @@
-@extends('components.template.modale', ["titre"=>  $t, "type"=> "temoignage", "temoignage" => $temoignage])
+@extends('components.template.modale', ['titre' => $t, 'type' => 'temoignage', 'temoignage' => $temoignage])
 
-@section('content-'.$temoignage->id)
+@section('content-' . $temoignage->id)
     {{-- {{$temoignage}} --}}
-
     @php
         $img = '';
         if (!empty($temoignage->img1)) {
             $img1 = $temoignage->img1;
-        } 
+        }
         if (!empty($temoignage->img2)) {
             $img2 = $temoignage->img2;
-        } 
+        }
         if (!empty($temoignage->img3)) {
             $img3 = $temoignage->img3;
-        } 
+        }
         if (empty($img1) && empty($img2) && empty($img3) && !empty($temoignage->animal)) {
             $animal = \App\Models\Animal::find($temoignage->animal);
             $animaGal = $animal->galeries;
@@ -32,14 +31,16 @@
         <aside class="photo">
             <figure class="photos">
                 @if (!empty($img1))
-                <img src="{{$img1}}" alt="">
+                    <img src="{{ $img1 }}" alt="">
                 @endif
-                @if(!empty($img2) && !empty($img3))
-                <img src="{{$img2}}" alt="">
-                <img src="{{$img3}}" alt="">
+                @if (!empty($img2))
+                    <img src="{{ $img2 }}" alt="">
                 @endif
-                @if (!empty($img))
-                <img src="{{$img}}" alt="">
+                @if (!empty($img3))
+                    <img src="{{ $img3 }}" alt="">
+                @endif
+                @if (!empty($img) && empty($img1) && empty($img2) && empty($img3))
+                    <img src="{{ $img }}" alt="">
                 @endif
                 <figcaption>
                     @php
@@ -54,8 +55,8 @@
                     {{ sizeof($titre) == 0 ? 'Anonyme' : implode(' & ', $titre) }}
                 </figcaption>
             </figure>
-            
-            
+
+
         </aside>
         <article class="photo">
             <h4>{{ $temoignage->titre }}</h4>

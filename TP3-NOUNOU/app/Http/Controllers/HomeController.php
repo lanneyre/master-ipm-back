@@ -62,4 +62,63 @@ class HomeController extends Controller
 
         dd($ok);
     }
+    public function imgTem()
+    {
+        $path = "../storage/app/public/tem/";
+        $imgs = array_diff(scandir($path), array('..', '.'));
+        $ok = [];
+        foreach ($imgs as $img) {
+            # code...
+            $t = Temoignage::inRandomOrder()->first();
+            // do {
+            # code...
+            if (empty($t->img1)) {
+                $t->img1 = "data:image/jpeg;base64," . base64_encode(file_get_contents($path . $img));
+            } elseif (empty($t->img2)) {
+                $t->img2 = "data:image/jpeg;base64," . base64_encode(file_get_contents($path . $img));
+            } elseif (empty($t->img3)) {
+                $t->img3 = "data:image/jpeg;base64," . base64_encode(file_get_contents($path . $img));
+            }
+            // } while (empty($t->img1) && empty($t->img2) && empty($t->img3));
+            $ok[] = $t->save();
+        }
+
+
+        // $s->icon = "data:image/png;base64," . base64_encode(file_get_contents($path));
+        // $img1 = "../storage/app/public/Service/accueil.jpg";
+        // $s->img1 = "data:image/jpeg;base64," . base64_encode(file_get_contents($img1));
+        // $ok[] = $s->save();
+
+        // $s = Service::find(2);
+        // $path = "../storage/app/public/Service/Soins.png";
+        // $s->icon = "data:image/png;base64," . base64_encode(file_get_contents($path));
+        // $img1 = "../storage/app/public/Service/veterinaire.png";
+        // $s->img1 = "data:image/png;base64," . base64_encode(file_get_contents($img1));
+        // $ok[] = $s->save();
+
+        // $s = Service::find(3);
+        // $path = "../storage/app/public/Service/home.png";
+        // $s->icon = "data:image/png;base64," . base64_encode(file_get_contents($path));
+        // $img1 = "../storage/app/public/Service/Jeu.jpg";
+        // $s->img1 = "data:image/jpeg;base64," . base64_encode(file_get_contents($img1));
+        // $ok[] = $s->save();
+
+        dd($ok);
+    }
+
+    public function contact(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'phone' => 'required|regex:/^[0-9]{10}$/',
+            'animal' => 'required|string',
+            'message' => 'required|string|max:1000',
+        ]);
+
+        // Ici, tu peux ajouter l'envoi d'email ou l'enregistrement en BDD
+        // Exemple : Mail::to('contact@association.com')->send(new ContactMail($request->all()));
+
+        return back()->with('success', 'Votre demande a bien été envoyée.');
+    }
 }
