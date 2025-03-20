@@ -114,14 +114,15 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     });
 
-    const contact = document.querySelectorAll(".modaleContact").forEach((c) => {
+    const contact = document.querySelectorAll(".modaleContact, .modaleSign").forEach((c) => {
         c.addEventListener("click", (e) => {
             const modale = e.currentTarget.getAttribute("modale");
-            // console.log(modale);
+            console.log(modale);
 
             document.getElementById(modale).classList.add("active")
         });
     })
+
 
     const criteres = document.querySelectorAll(".criteres").forEach((crit) => {
         crit.addEventListener("change", (e) => {

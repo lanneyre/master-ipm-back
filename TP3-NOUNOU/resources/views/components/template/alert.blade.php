@@ -4,7 +4,7 @@
             <span class="closeModale">x</span>
             <h3 id="titre" class="{{ session('alert')['type'] }}">{{ ucfirst(session('alert')['type']) }}</h3>
             <div class="content">
-                {{ session('alert')['msg'] }}
+                {!! session('alert')['msg'] !!}
             </div>
         </div>
     </div>

@@ -7,6 +7,13 @@
     <li><a href="#aide">Nous aider</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
+    @auth
+        <li><a href="{{ route('login.logout') }}">Déconnexion</a></li>
+    @else
+        <li><a href="#sign" class="modaleSign" modale="sign-sign">Login</a></li>
+    @endauth
+
+
 </ul>
 
 
@@ -20,6 +27,11 @@
         <li><a href="#aide">Nous aider</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
+        @auth
+            <li><a href="{{ route('login.logout') }}">Déconnexion</a></li>
+        @else
+            <li><a href="#sign" class="modaleSign" modale="sign-sign">Login</a></li>
+        @endauth
     </ul>
 </div>
 
@@ -30,3 +42,5 @@
         <span></span>
     </span>
 </a>
+
+@include('components.template.sign', ['titre' => 'Connexion / Inscription'])

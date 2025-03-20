@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 use App\Models\Animal;
 use App\Models\Critere;
 use App\Models\Espece;
-use App\Models\Race;
+use App\Models\User;
 use App\Models\Temoignage;
 use App\Models\Service;
 use App\Models\Status;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class HomeController extends Controller
 {
@@ -54,7 +57,6 @@ class HomeController extends Controller
                     ->skip($offset)->take($limit)->get();
             }
         }
-
 
         $nbAnimaux = Animal::with(['statuses', 'galeries', 'raceAnimal'])->whereRelation("statuses", "status_id", [1, 2, 4, 5, 8, 9, 10])->count();
         //$status = Status::whereIn("id", [1, 2, 4, 5, 8, 9, 10])->get();
@@ -145,5 +147,47 @@ class HomeController extends Controller
         // Exemple : Mail::to('contact@association.com')->send(new ContactMail($request->all()));
 
         return back()->with('alert', ["type" => 'error', "msg" => 'Votre demande a bien été envoyée.']);
+    }
+
+    public function login(Request $request)
+    {
+
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string|min:4',
+        ]);
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            $user = Auth::getUser();
+            return back()->with('alert', ["type" => 'success', "msg" => 'Bonjour ' . $user->name . ', <br>Vous êtes bien connecté']);
+            //return redirect()->intended('/dashboard'); // Redirection après connexion
+        }
+        return back()->with('alert', ["type" => 'error', "msg" => 'Identifiants incorrects.']);
+
+        //dd($request);
+    }
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 2,
+        ]);
+
+        Auth::login($user);
+        return back()->with('alert', ["type" => 'success', "msg" => 'Inscription réussie']);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return back()->with('alert', ["type" => 'success', "msg" => 'Deconnexion réussie']);
     }
 }
