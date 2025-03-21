@@ -91,6 +91,7 @@ nav ul {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     /* margin: 0; */
     margin: 10px 0;
     padding: 0;
@@ -106,6 +107,18 @@ nav ul li a {
     font-weight: bold;
     border: 1px solid var(--vertpale);
 
+}
+nav ul li a.icon {
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--vert);
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+}
+nav  a.icon svg {
+    width: 33px;
 }
 
 nav ul li a.active {
@@ -200,6 +213,13 @@ nav ul li a:hover {
         flex-direction: column;
         justify-content: start;
     }
+}
+
+nav svg{
+    /* height: 15px;
+    width: 15px;
+    display: inline-block;
+    margin: 0; */
 }
 
 /* Fin Barre de navigation  */
