@@ -7,6 +7,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/controller';
 
+
+
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -114,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     });
 
-    const contact = document.querySelectorAll(".modaleContact, .modaleSign, .modaleUser").forEach((c) => {
+    const contact = document.querySelectorAll(".modaleContact, .modaleSign, .modaleUser, .modaleAdmin").forEach((c) => {
         c.addEventListener("click", (e) => {
             const modale = e.currentTarget.getAttribute("modale");
             // console.log(modale);
@@ -123,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     })
 
-   
+
 
 
     const criteres = document.querySelectorAll(".criteres").forEach((crit) => {

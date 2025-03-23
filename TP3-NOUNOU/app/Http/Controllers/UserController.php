@@ -15,6 +15,8 @@ class UserController extends Controller
     public function index()
     {
         //
+        $users = User::all();
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -23,6 +25,7 @@ class UserController extends Controller
     public function create()
     {
         //
+        return view('admin.users.create');
     }
 
     /**
@@ -31,22 +34,43 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8|confirmed',
+            'img' => 'nullable|image|max:2048',
+            'description' => 'nullable|string',
+            'role' => 'required|integer|exists:roles,id',
+        ]);
+
+        $data = $request->except('password', 'img');
+        $data['password'] = Hash::make($request->password);
+
+        if ($request->hasFile('img')) {
+            $data['img'] = $request->file('img')->store('users', 'public');
+        }
+
+        User::create($data);
+
+        return redirect()->route('admin.users.index')->with('success', 'Utilisateur ajouté avec succès.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(User $User)
+    public function show(User $user)
     {
         //
+
+        return view('admin.users.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request, $id)
+    public function edit(Request $request, User $user)
     {
-        
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -63,7 +87,9 @@ class UserController extends Controller
             'password' => 'nullable|min:6',
             'img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'description' => 'nullable|string|max:255',
+            'role' => 'int'
         ]);
+
 
         $user->name = $request->name;
         $user->email = $request->email;
@@ -82,7 +108,12 @@ class UserController extends Controller
         }
 
         $user->description = $request->description;
+        if ($request->has('role')) {
+            $user->role = $request->role;
+        }
+
         $user->save();
+
 
         return back()->with('alert', ["type" => 'success', "msg" => 'Profils mis à jours avec succés']);
     }
@@ -93,5 +124,7 @@ class UserController extends Controller
     public function destroy(User $User)
     {
         //
+        $User->delete();
+        return redirect()->route('users.index')->with('alert', ["type" => 'success', "msg" => 'Profils supprimé']);
     }
 }

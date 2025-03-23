@@ -31,6 +31,11 @@ h2 {
     text-shadow: var(--vert) 3px 2px 10px;
 }
 
+main#404 {
+    padding-top: 70px;
+    background-color: var(--vert);
+}
+
 p {
     font-size: 1.2rem;
     color: var(--blanc);
@@ -45,7 +50,7 @@ ul {
     padding: 5px;
     text-align: center;
     border-radius: 10px;
-    display: block;
+    /* display: block; */
     font-size: 26px;
     text-decoration: none;
 }
@@ -76,7 +81,7 @@ ul {
 }
 
 /* Barre de navigation  */
-nav {
+nav#top {
     width: 100%;
     position: fixed;
     background-color: var(--vert);
@@ -84,10 +89,10 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 20;
 }
 
-nav ul {
+nav#top ul {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
@@ -97,7 +102,7 @@ nav ul {
     padding: 0;
 }
 
-nav ul li a {
+nav#top ul li a {
 
     padding: 5px 15px;
     border-radius: 20px;
@@ -108,7 +113,8 @@ nav ul li a {
     border: 1px solid var(--vertpale);
 
 }
-nav ul li a.icon {
+
+nav#top ul li a.icon {
     padding: 5px 15px;
     border-radius: 20px;
     background-color: transparent;
@@ -117,15 +123,16 @@ nav ul li a.icon {
     font-weight: bold;
     border: none;
 }
-nav  a.icon svg {
+
+nav#top a.icon svg {
     width: 33px;
 }
 
-nav ul li a.active {
+nav#top ul li a.active {
     border: 1px solid var(--blanc);
 }
 
-nav ul li a:hover {
+nav#top ul li a:hover {
     background-color: var(--vert);
     color: var(--vertpale);
 }
@@ -205,17 +212,17 @@ nav ul li a:hover {
         display: block;
     }
 
-    nav>ul {
+    nav#top>ul {
         display: none;
     }
 
-    nav ul {
+    nav#top ul {
         flex-direction: column;
         justify-content: start;
     }
 }
 
-nav svg{
+nav#top svg {
     /* height: 15px;
     width: 15px;
     display: inline-block;
@@ -545,6 +552,11 @@ figure.vedettes>figcaption>small {
     #adopter>.mycontainer aside,
     #adopter>.mycontainer article {
         width: 100%;
+    }
+
+    #adopter>.mycontainer header ul {
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 
     #adopter>.mycontainer aside ul {
@@ -883,4 +895,87 @@ h3#titre {
 .error {
     background-color: var(--rouge) !important;
     color: var(--blanc);
+}
+
+#admin {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 70px;
+}
+
+#admin-menu .menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 50px;
+}
+
+#admin-menu .menu a {
+    width: 30%;
+}
+
+#admin-menu .menu a figure svg {
+    width: 100%;
+}
+
+#admin-menu .menu a figure figcaption {
+    text-align: center;
+    color: var(--vert);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#admin-menu .menu a:hover figure svg {
+    border: 3px solid var(--vert);
+    border-radius: 50%;
+}
+
+body.admin {
+    background-color: var(--blanc);
+}
+
+body.admin>main {
+    margin-top: 70px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+table td.action {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+body.admin h1 {
+    color: var(--vert);
+}
+
+#users-table {
+    /* background-color: var(--vertpale); */
+}
+
+p.card-text,
+h5.card-title {
+    color: var(--vert);
+}
+
+h5.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.form-label {
+    color: var(--vert);
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    margin-left: 15px;
+    border: 1px solid var(--vertpale);
 }

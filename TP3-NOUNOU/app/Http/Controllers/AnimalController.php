@@ -14,7 +14,8 @@ class AnimalController extends Controller
     public function index()
     {
         //
-        //return response()->json(Animal::with(['race', 'race_mere', 'race_pere', 'galeries', 'criteres'])->get());
+
+        //return response()->json(Animal::with(['raceAnimal', 'race_mere', 'race_pere', 'galeries', 'criteres'])->get());
     }
 
     /**
