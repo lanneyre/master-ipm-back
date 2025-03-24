@@ -11,6 +11,17 @@ class Race extends Model
     /** @use HasFactory<\Database\Factories\RaceFactory> */
     use HasFactory, SoftDeletes;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'nom',
+        'caracteristiques',
+        'espece_id'
+    ];
+
     public function animals()
     {
         return $this->hasMany(Animal::class, "race");

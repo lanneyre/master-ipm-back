@@ -3,22 +3,20 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-4">Détails de l'espèce</h1>
+        <h1 class="mb-4">Détails de la race</h1>
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">{{ $espece->nom }}</h5>
-                <p class="card-text"><strong>Description:</strong> {{ $espece->description ?? 'Aucune description' }}</p>
+                <h5 class="card-title">{{ $race->nom }}</h5>
+                <p class="card-text"><strong>Caractéristiques :</strong>
+                    {{ $race->caracteristiques ?? 'Aucune Caractéristiques' }}</p>
 
-                @if (is_file(storage_path('app/public/') . $espece->nom . '.png'))
-                    <p class="card-text"><strong>Image de race:</strong></p>
-                    <img src="{{ asset('storage/' . $espece->nom) }}.png" alt="Image de {{ $espece->name }}"
-                        class="img-thumbnail" width="200">
-                @endif
+                <p class="card-text"><strong>Espèce :</strong>
+                    {{ $race->espece->nom }}</p>
 
-                <a href="{{ route('espece.index') }}" class="btn btn-vert btnsmall btn-secondary mt-3">Retour à la
+                <a href="{{ route('race.index') }}" class="btn btn-vert btnsmall btn-secondary mt-3">Retour à la
                     liste</a>
-                <a href="{{ route('espece.edit', $espece) }}" class="btn btn-vert btnsmall btn-secondary  mt-3">Modifier</a>
+                <a href="{{ route('race.edit', $race) }}" class="btn btn-vert btnsmall btn-secondary  mt-3">Modifier</a>
             </div>
         </div>
     </div>

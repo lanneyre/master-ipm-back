@@ -3,28 +3,30 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-4">Liste des espèces</h1>
+        <h1 class="mb-4">Liste des races</h1>
 
-        <a href="{{ route('espece.create') }}" class="btn btn-primary mb-3">Ajouter une espece</a>
+        <a href="{{ route('race.create') }}" class="btn btn-primary mb-3">Ajouter une race</a>
 
 
-        <table class="table table-striped" id="especes-table">
+        <table class="table table-striped" id="races-table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
-                    <th>Description</th>
+                    <th>Caracteristiques</th>
+                    <th>Espèce</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($especes as $espece)
+                @foreach ($races as $race)
                     <tr>
-                        <td>{{ $espece->id }}</td>
-                        <td>{{ $espece->nom }}</td>
-                        <td>{{ $espece->description }}</td>
+                        <td>{{ $race->id }}</td>
+                        <td>{{ $race->nom }}</td>
+                        <td>{{ $race->caracteristiques }}</td>
+                        <td>{{ $race->espece->nom }}</td>
                         <td class="action">
-                            <a href="{{ route('espece.show', $espece) }}" class="">
+                            <a href="{{ route('race.show', $race) }}" class="">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="30px"
                                     height="30px">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -41,7 +43,7 @@
                                     </g>
                                 </svg>
                             </a>
-                            <a href="{{ route('espece.edit', $espece) }}" class="">
+                            <a href="{{ route('race.edit', $race) }}" class="">
                                 <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" width="30px"
                                     height="30px">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -55,11 +57,10 @@
                                     </g>
                                 </svg>
                             </a>
-                            <form action="{{ route('espece.destroy', $espece) }}" method="POST"
-                                style="display:inline-block">
+                            <form action="{{ route('race.destroy', $race) }}" method="POST" style="display:inline-block">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="" onclick="return confirm('Supprimer cette espèce ?')">
+                                <button type="submit" class="" onclick="return confirm('Supprimer cette race ?')">
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                                         width="30px" height="30px">
                                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -81,7 +82,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
-                    <th>Description</th>
+                    <th>Caracteristiques</th>
+                    <th>Espèce</th>
                     <th>Actions</th>
                 </tr>
             </tfoot>
@@ -94,7 +96,7 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
-            $('#especes-table').DataTable();
+            $('#races-table').DataTable();
         });
     </script>
 @endsection

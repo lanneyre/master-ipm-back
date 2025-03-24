@@ -3,11 +3,11 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-4">Créer une nouvelle espèce</h1>
+        <h1 class="mb-4">Créer une nouvelle race</h1>
 
         <div class="card">
             <div class="card-body">
-                <form action="{{ route('espece.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('race.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">
@@ -17,17 +17,23 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="description" class="form-label">Description</label>
-                        <textarea name="description" id="description" class="form-control">{{ old('description') }}</textarea>
+                        <label for="caracteristiques" class="form-label">Caractéristiques</label><br>
+                        <textarea name="caracteristiques" id="caracteristiques" class="form-control">{{ old('caracteristiques') }}</textarea>
                     </div>
 
                     <div class="mb-3">
-                        <label for="img" class="form-label">Image de l'espèce</label>
-                        <input type="file" name="img" id="img" class="form-control" pattern="*.png">
+                        <label for="espece" class="form-label">Espèce</label><br>
+                        <select name="espece_id" id="espece" required>
+                            <option value="--" selected disabled>-- Choisir une race --</option>
+                            @foreach (\App\Models\Espece::all() as $espece)
+                                <option value="{{ $espece->id }}">{{ $espece->nom }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-vert btnsmall btn-secondary ">Créer</button>
-                    <a href="{{ route('espece.index') }}" class="btn btn-vert btnsmall btn-secondary">Annuler</a>
+                    <a href="{{ route('race.index') }}" class="btn btn-vert btnsmall btn-secondary">Annuler</a>
                 </form>
             </div>
         </div>

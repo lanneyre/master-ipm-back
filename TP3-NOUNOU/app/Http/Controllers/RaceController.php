@@ -13,6 +13,8 @@ class RaceController extends Controller
     public function index()
     {
         //
+        $races = Race::with(["espece"])->get();
+        return view('admin.races.index', compact('races'));
     }
 
     /**
@@ -21,6 +23,7 @@ class RaceController extends Controller
     public function create()
     {
         //
+        return view('admin.races.create');
     }
 
     /**
@@ -29,6 +32,14 @@ class RaceController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->validate([
+            'nom' => 'required|string|max:255',
+            'caracteristiques' => 'required|string',
+            'espece_id' => 'required|integer'
+        ]);
+
+        $race = Race::create($data);
+        return redirect()->route('race.show', $race->id)->with('alert', ["type" => 'success', "msg" => 'Race créé avec succès.']);
     }
 
     /**
@@ -37,6 +48,7 @@ class RaceController extends Controller
     public function show(Race $race)
     {
         //
+        return view('admin.races.show', compact('race'));
     }
 
     /**
@@ -45,6 +57,7 @@ class RaceController extends Controller
     public function edit(Race $race)
     {
         //
+        return view('admin.races.edit', compact('race'));
     }
 
     /**
@@ -53,6 +66,14 @@ class RaceController extends Controller
     public function update(Request $request, Race $race)
     {
         //
+        $data = $request->validate([
+            'nom' => 'required|string|max:255',
+            'caracteristiques' => 'required|string',
+            'espece_id' => 'required|integer'
+        ]);
+
+        $race->update($data);
+        return redirect()->route('race.show', $race->id)->with('alert', ["type" => 'success', "msg" => 'Race mise à jour avec succès.']);
     }
 
     /**
@@ -61,5 +82,7 @@ class RaceController extends Controller
     public function destroy(Race $race)
     {
         //
+        $race->delete();
+        return redirect()->route('race.index')->with('alert', ["type" => 'success', "msg" => 'Race supprimée']);
     }
 }
