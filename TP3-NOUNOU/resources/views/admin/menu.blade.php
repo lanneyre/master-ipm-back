@@ -8,7 +8,6 @@
     </li>
     <li><a href="{{ route('race.index') }}">Les races</a></li>
     <li><a href="{{ route('espece.index') }}">Les espèces</a></li>
-    <li><a href="{{ route('temoignage.index') }}">Les témoignages</a></li>
 </ul>
 
 
@@ -23,7 +22,6 @@
         </li>
         <li><a href="{{ route('race.index') }}">Les races</a></li>
         <li><a href="{{ route('espece.index') }}">Les espèces</a></li>
-        <li><a href="{{ route('temoignage.index') }}">Les témoignages</a></li>
     </ul>
 </div>
 
