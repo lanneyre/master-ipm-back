@@ -32,11 +32,11 @@ class Animal extends Model
     {
         return $this->belongsTo(Race::class, 'race');
     }
-    public function race_mere()
+    public function raceMere()
     {
         return $this->belongsTo(Race::class, 'race_mere');
     }
-    public function race_pere()
+    public function racePere()
     {
         return $this->belongsTo(Race::class, 'race_pere');
     }
@@ -59,7 +59,7 @@ class Animal extends Model
 
     public function statuses()
     {
-        return $this->belongsToMany(Status::class, "status_animals");
+        return $this->belongsToMany(Status::class, "status_animals")->withPivot("date");
     }
 
     public static function vedettes(): array

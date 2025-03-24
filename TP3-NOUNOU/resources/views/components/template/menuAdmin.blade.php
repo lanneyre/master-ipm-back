@@ -50,7 +50,7 @@
             </figure>
         </a>
 
-        <a href="{{ route('temoignage.index') }}">
+        {{-- <a href="{{ route('temoignage.index') }}">
             <figure>
                 <svg viewBox="-2 -2 24.00 24.00" xmlns="http://www.w3.org/2000/svg" fill="#1C7C54">
                     <g id="SVGRepo_bgCarrier" stroke-width="0">
@@ -69,7 +69,7 @@
                 </svg>
                 <figcaption>Gestion des témoignages</figcaption>
             </figure>
-        </a>
+        </a> --}}
 
         <a href="{{ route('race.index') }}">
             <figure>

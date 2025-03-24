@@ -5,6 +5,7 @@ use App\Http\Controllers\CritereController;
 use App\Http\Controllers\EspeceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RaceController;
+use App\Http\Controllers\GalerieController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TemoignageController;
@@ -33,7 +34,11 @@ Route::middleware(BlockRoleMiddleware::class)->group(function () {
         "temoignage" => TemoignageController::class,
         "race" => RaceController::class,
         "espece" => EspeceController::class,
+
     ]);
+    Route::resources([
+        "galerie" => GalerieController::class,
+    ], ['only' => ["store", "destroy"]]);
 });
 
 Route::middleware(OnlyAdminMiddleware::class)->group(function () {

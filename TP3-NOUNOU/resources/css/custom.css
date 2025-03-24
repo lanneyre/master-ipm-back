@@ -979,3 +979,37 @@ textarea {
     margin-left: 15px;
     border: 1px solid var(--vertpale);
 }
+
+.galerie {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.galerie figure {
+    width: 30%;
+    position: relative;
+}
+
+.galerie figure figcaption {
+    position: relative;
+}
+
+.galerie figure figcaption a {
+    width: 50px;
+    position: absolute;
+    right: 0;
+
+}
+
+.form-critere {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-critere>.form-control {
+    width: 20%;
+}

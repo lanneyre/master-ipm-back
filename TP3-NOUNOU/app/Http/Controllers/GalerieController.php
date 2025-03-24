@@ -7,21 +7,6 @@ use Illuminate\Http\Request;
 
 class GalerieController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -29,31 +14,30 @@ class GalerieController extends Controller
     public function store(Request $request)
     {
         //
+        $v = $request->validate([
+            'img' => 'required|image',
+            'animal_id' => 'required|integer',
+            'legend' => 'string'
+        ]);
+
+        $destinationPath = storage_path('app/public/animaux/'); // Change selon besoin
+        if ($request->hasFile('img')) {
+
+            $img = $request->file('img');
+            $animal = $request->animal_id;
+            $fileName = uniqid("img_" . $animal . "_") . "." . $img->extension();
+            //$f = $destinationPath . "/" . $fileName;
+
+            $v["chemin"] = $fileName;
+            unset($v["img"]);
+            $img->move($destinationPath, $fileName);
+            Galerie::create($v);
+            return redirect()->route('animal.edit', $animal)->with('alert', ["type" => 'success', "msg" => 'lPhoto Rajouté']);
+        }
+        return redirect()->route('animal.edit', $request->animal_id)->with('alert', ["type" => 'error', "msg" => 'Une image est obligatoire']);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Galerie $galerie)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Galerie $galerie)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Galerie $galerie)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -61,5 +45,13 @@ class GalerieController extends Controller
     public function destroy(Galerie $galerie)
     {
         //
+        $destinationPath = storage_path('app/public/animaux/');
+        $img = $destinationPath . $galerie->chemin;
+        if (is_file($img)) {
+            unlink($img);
+        }
+        $animal = $galerie->animal_id;
+        $galerie->delete();
+        return redirect()->route('animal.edit', $animal)->with('alert', ["type" => 'success', "msg" => 'Photo supprimée']);
     }
 }

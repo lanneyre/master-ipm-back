@@ -116,8 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     });
 
-    const contact = document.querySelectorAll(".modaleContact, .modaleSign, .modaleUser, .modaleAdmin").forEach((c) => {
+    const contact = document.querySelectorAll(".modaleContact, .modaleSign, .modaleUser, .modaleAdmin, .modaleAddPhotos").forEach((c) => {
         c.addEventListener("click", (e) => {
+            e.preventDefault
             const modale = e.currentTarget.getAttribute("modale");
             // console.log(modale);
 
