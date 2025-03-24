@@ -9,4 +9,14 @@ class Espece extends Model
 {
     /** @use HasFactory<\Database\Factories\EspeceFactory> */
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'nom',
+        'description'
+    ];
 }

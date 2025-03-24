@@ -17,7 +17,9 @@ class BlockRoleMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         // Vérifier si l'utilisateur est authentifié et a le rôle 2
-        if (Auth::check() && Auth::getUser()->role == 2) {
+        //dd(Auth::check());
+
+        if (!Auth::check() || Auth::getUser()->role == 2) {
             abort(403, 'Accès interdit');
         }
 

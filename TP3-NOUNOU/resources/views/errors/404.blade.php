@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav id="top">
         @include('components.template.nav')
     </nav>
     <main id="404">
