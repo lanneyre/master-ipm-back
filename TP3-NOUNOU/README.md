@@ -1,3 +1,69 @@
+# New Life Pets
+
+New Life Pets est une application web permettant de faciliter l'adoption et la gestion des animaux de compagnie. Le site tourne sous Laravel 12 et propose une interface intuitive pour les utilisateurs.
+
+## Prérequis
+Avant d'installer et d'exécuter ce projet, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+
+- **PHP** >= 8.2
+- **Composer** (gestionnaire de dépendances PHP)
+- **MySQL** ou un autre serveur de base de données compatible
+- **Node.js** et **npm** (pour gérer les assets front-end)
+- **Git** (pour cloner le projet)
+- **Docker** (optionnel, si vous utilisez un environnement conteneurisé)
+
+## Installation
+
+1. **Cloner le dépôt Git**
+```sh
+git clone https://github.com/votre-utilisateur/new-life-pets.git
+cd new-life-pets
+```
+
+2. **Installer les dépendances PHP**
+```sh
+composer install
+```
+
+3. **Configurer l'environnement**
+Copiez le fichier `.env.example` et renommez-le en `.env` :
+```sh
+cp .env.example .env
+```
+Modifiez le fichier `.env` pour configurer la connexion à la base de données.
+
+4. **Générer la clé d'application**
+```sh
+php artisan key:generate
+```
+
+5. **Configurer la base de données**
+Créez une base de données MySQL et mettez à jour `.env` avec les bonnes informations.
+Puis, exécutez les migrations :
+```sh
+php artisan migrate --seed
+```
+
+6. **Installer les dépendances front-end**
+```sh
+npm install && npm run build
+```
+
+7. **Lancer le serveur local**
+```sh
+php artisan serve
+```
+L'application sera accessible à l'adresse `http://127.0.0.1:8000/`.
+
+## Utilisation avec Docker (optionnel)
+Si vous utilisez Docker, vous pouvez lancer le projet avec :
+```sh
+docker-compose up -d
+```
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -7,59 +73,27 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## À propos de Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel est un framework pour applications web offrant une syntaxe élégante et expressive. Nous pensons que le développement doit être une expérience agréable et créative pour être réellement enrichissante. Laravel simplifie le développement en automatisant les tâches courantes utilisées dans de nombreux projets web, telles que :
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [Un moteur de routage simple et rapide.](https://laravel.com/docs/routing).
+- [Un puissant conteneur d'injection de dépendances.](https://laravel.com/docs/container).
+- Plusieurs options de stockage pour [les sessions](https://laravel.com/docs/session) et [le cache](https://laravel.com/docs/cache).
+- [Un ORM de base de données expressif et intuitif.](https://laravel.com/docs/eloquent).
+- [Des migrations de schéma indépendantes du système de base de données.](https://laravel.com/docs/migrations).
+- [Un traitement robuste des tâches en arrière-plan.](https://laravel.com/docs/queues).
+- [Une diffusion d'événements en temps réel.](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel est à la fois accessible et puissant, et fournit les outils nécessaires à la création d'applications robustes et évolutives.
 
-## Learning Laravel
+## Apprendre Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Laravel dispose de la documentation la plus complète et détaillée parmi les frameworks modernes pour applications web, ce qui le rend facile à prendre en main. Consultez la [documentation officielle](https://laravel.com/docs).
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Vous pouvez également essayer le [Laravel Bootcamp](https://bootcamp.laravel.com), où vous serez guidé pas à pas dans la création d'une application Laravel moderne.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Si vous préférez apprendre par la pratique, [Laracasts](https://laracasts.com) propose des milliers de tutoriels vidéo sur des sujets variés, notamment Laravel, PHP moderne, les tests unitaires et JavaScript. Améliorez vos compétences grâce à cette vaste bibliothèque de contenus.
 
 ## License
 
